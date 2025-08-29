@@ -1,0 +1,198 @@
+/* ------------------ Search Page ------------------ */
+.search-page {
+  background: url("https://i.ibb.co/7JfqXxB/books-bg.jpg") no-repeat center
+    center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 182, 193, 0.8),
+    rgba(173, 216, 230, 0.8)
+  );
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(164, 30, 30, 0.3);
+}
+
+.title {
+  font-size: 3rem;
+  color: #622f8c;
+  font-family: "Georgia", serif;
+  margin-bottom: 20px;
+}
+
+.search-bar-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(195, 187, 196, 0.667);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.search-bar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(216, 28, 216, 0.667);
+}
+
+.search-button {
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #ff69b4, #87cefa);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.search-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(150, 14, 204, 0.667);
+}
+
+.quotes {
+  margin-top: 20px;
+  color: rgb(120, 28, 195);
+  font-style: italic;
+}
+
+/* ------------------ Results Page ------------------ */
+.results-page {
+  background: linear-gradient(90deg, #de6eb7, #6cb2ec);
+  min-height: 100vh;
+  padding-top: 80px;
+  position: relative;
+}
+
+/* full-page book photo */
+.results-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop")
+    center/cover no-repeat;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* fixed smaller header */
+.results-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  background: rgba(194, 98, 229, 0.936);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.results-title {
+  font-weight: 800;
+  font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.return-button {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1155cb, #fc25d5);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.return-button:hover {
+  transform: translateY(-50%) scale(1.06);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.23);
+}
+
+/* grid */
+.results-grid {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* card */
+.book-card {
+  background: linear-gradient(
+    180deg,
+    rgba(87, 238, 225, 0.667),
+    #e7eb80
+  ); /* light orange #ebc7ff*/
+  border-radius: 16px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.book-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+}
+
+.cover-wrap {
+  position: relative;
+}
+
+/* cover image */
+.book-cover {
+  width: 100%;
+  height: 260px;
+  border-radius: 12px;
+  object-fit: contain; /*show full cover */
+  background: #fff;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+/* fallback */
+.fallback-cover {
+  width: 100%;
+  height: 260px;
+  background: brown;
+  color: gold;
+  border-radius: 12px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  text-align: center;
+  font-weight: 800;
+}
+
+/* details */
+.book-details {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
